@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-brincando-mysql",
+  "version": "1.0.0",
+  "description": "Brincando com MySQL no NodeJS",
+  "main": "app.js",
+  "repository": "https://github.com/lin-br/nodejs-brincando-mysql.git",
+  "author": "Wesley Ribeiro <wes.rsilva@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lin-br/nodejs-brincando-mysql/issues"
+  },
+  "homepage": "https://github.com/lin-br/nodejs-brincando-mysql.git#readme",
+  "dependencies": {
+    "express": "4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.11"
+  }
+}
