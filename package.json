@@ -16,5 +16,8 @@
   },
   "devDependencies": {
     "nodemon": "1.18.11"
+  },
+  "scripts": {
+    "start": "nodemon app.js"
   }
 }
