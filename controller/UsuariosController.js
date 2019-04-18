@@ -30,4 +30,15 @@ router.get('/:id', (request, response) => {
         })
 });
 
+router.delete('/:id', (request, response) => {
+    let id = request.params.id;
+
+    UsuariosService.excluirUsuario(id)
+        .then(() => response.send())
+        .catch(erro => {
+            console.log(erro);
+            response.status(500).send();
+        });
+});
+
 module.exports = router;

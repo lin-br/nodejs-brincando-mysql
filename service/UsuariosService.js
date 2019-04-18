@@ -17,6 +17,10 @@ class UsuariosService {
     static consultarUsuario(id) {
         return new UsuarioDao(pool).consultar(id);
     }
+
+    static excluirUsuario(id) {
+        return new UsuarioDao(pool).excluir(id);
+    }
 }
 
 module.exports = UsuariosService;
