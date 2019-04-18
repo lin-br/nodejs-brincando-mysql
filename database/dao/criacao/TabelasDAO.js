@@ -65,10 +65,7 @@ async function inserirChavesEstrangeiras(conexao, banco) {
 
 class TabelasDAO {
 
-    static async criarTabelas(conexao) {
-
-        let banco = process.env.MYSQL_BD ? process.env.MYSQL_BD : 'nodejs_brincando_mysql';
-
+    static async criarTabelas(conexao, banco) {
         await criarTabelaUsuarios(conexao, banco);
         await criarTabelaPermissoes(conexao, banco);
         await criarTabelaPermissoesUsuarios(conexao, banco);
