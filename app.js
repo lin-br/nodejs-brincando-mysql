@@ -1,11 +1,10 @@
 const pool = require('./service/MysqlPoolFactory').getPool();
 const bancoDeDadosDAO = require('./database/dao/BancoDeDadosDAO');
-const TabelasDAO = require('./database/dao/TabelasDAO');
+const tabelasDAO = require('./database/dao/TabelasDAO');
 
 async function executar() {
     await bancoDeDadosDAO.criarBanco(pool);
-    let tabelasDAO = new TabelasDAO(pool);
-    await tabelasDAO.criarTabelas();
+    await tabelasDAO.criarTabelas(pool);
 }
 
 executar();
