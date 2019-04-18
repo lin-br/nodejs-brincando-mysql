@@ -1,8 +1,9 @@
 const driverMysql = require('mysql');
 
-const HOST = process.env.HOST ? process.env.HOST : 'localhost';
-const USER = process.env.MYSQL_USER ? process.env.MYSQL_USER : 'root';
-const PASSWORD = process.env.MYSQL_PASSWORD ? process.env.MYSQL_PASSWORD : '123456';
+const HOST = process.env.HOST;
+const USER = process.env.MYSQL_USER;
+const PASSWORD = process.env.MYSQL_PASSWORD;
+const DATABASE = process.env.MYSQL_DATABASE;
 
 process.on('SIGINT', () => {
     MysqlPoolFactory.getPool().end(erro => {
@@ -14,11 +15,14 @@ process.on('SIGINT', () => {
 
 class MysqlPoolFactory {
 
-    static getPool() {
+    static getPool(opcoes = {}) {
+        let {host, user, password, database} = opcoes;
+
         return driverMysql.createPool({
-            host: HOST,
-            user: USER,
-            password: PASSWORD
+            host: HOST ? HOST : host,
+            user: USER ? USER : user,
+            password: PASSWORD ? PASSWORD : password,
+            database: DATABASE ? DATABASE : database
         });
     }
 }
