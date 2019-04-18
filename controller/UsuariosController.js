@@ -15,4 +15,19 @@ router.post('/', (request, response) => {
         });
 });
 
+router.get('/:id', (request, response) => {
+    let id = request.params.id;
+
+    UsuariosService.consultarUsuario(id)
+        .then(usuario => {
+            if (usuario)
+                response.send(usuario);
+            response.status(404).send();
+        })
+        .catch(erro => {
+            console.log(erro);
+            response.status(500).send();
+        })
+});
+
 module.exports = router;

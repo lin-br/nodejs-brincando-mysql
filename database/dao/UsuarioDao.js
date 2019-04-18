@@ -18,6 +18,23 @@ class UsuarioDao {
             );
         });
     }
+
+    consultar(id) {
+        return new Promise((resolve, reject) => {
+            this._conexao.query('SELECT * FROM usuarios WHERE id = ?;',
+                [id],
+                (erro, resultado) => {
+                    if (erro) {
+                        reject(erro);
+                    } else {
+                        if (resultado.length)
+                            resolve(resultado);
+                        resolve('');
+                    }
+                }
+            );
+        });
+    }
 }
 
 module.exports = UsuarioDao;

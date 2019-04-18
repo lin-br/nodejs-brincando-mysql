@@ -13,6 +13,10 @@ class UsuariosService {
     static cadastrarUsuario(usuario, senha) {
         return new UsuarioDao(pool).cadastrar(usuario, senha);
     }
+
+    static consultarUsuario(id) {
+        return new UsuarioDao(pool).consultar(id);
+    }
 }
 
 module.exports = UsuariosService;
