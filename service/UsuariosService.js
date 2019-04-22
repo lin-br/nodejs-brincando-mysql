@@ -21,6 +21,10 @@ class UsuariosService {
     static excluirUsuario(id) {
         return new UsuarioDao(pool).excluir(id);
     }
+
+    static consultarTodos() {
+        return new UsuarioDao(pool).consultarTodos();
+    }
 }
 
 module.exports = UsuariosService;

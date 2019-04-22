@@ -15,6 +15,17 @@ router.post('/', (request, response) => {
         });
 });
 
+router.get('/', (request, response) => {
+    UsuariosService.consultarTodos()
+        .then(listaDeUsuarios => {
+            response.send(listaDeUsuarios);
+        })
+        .catch(erro => {
+            console.log(erro);
+            response.status(500).send();
+        })
+});
+
 router.get('/:id', (request, response) => {
     let id = request.params.id;
 

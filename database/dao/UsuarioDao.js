@@ -47,6 +47,17 @@ class UsuarioDao {
             );
         });
     }
+
+    consultarTodos() {
+        return new Promise((resolve, reject) => {
+            this._conexao.query('SELECT * FROM usuarios;',
+                (erro, resultado) => {
+                    if (erro) reject(erro);
+                    resolve(resultado);
+                }
+            );
+        });
+    }
 }
 
 module.exports = UsuarioDao;
