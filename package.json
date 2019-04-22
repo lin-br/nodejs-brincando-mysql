@@ -12,6 +12,7 @@
   "homepage": "https://github.com/lin-br/nodejs-brincando-mysql.git#readme",
   "dependencies": {
     "express": "4.16.4",
+    "helmet": "3.16.0",
     "mysql": "2.16.0"
   },
   "devDependencies": {
