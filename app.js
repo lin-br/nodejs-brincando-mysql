@@ -1,5 +1,14 @@
 const express = require('express');
 const UsuariosController = require('./controller/UsuariosController');
+const BancoDeDadosService = require('./service/BancoDeDadosService');
+const MysqlPoolFactory = require('./service/MysqlPoolFactory');
+
+BancoDeDadosService.inicializar(MysqlPoolFactory.getPool({
+    host: 'localhost',
+    user: 'root',
+    password: '123456',
+    database: 'nodejs_brincando_mysql'
+}));
 
 const app = express();
 
